@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     environment {
-        DEPLOY_DIR = "/var/www/nodejs-cicd-app"
+        DEPLOY_DIR = "/var/www/nodejs-app-deploy"
         APP_NAME = "nodejs-app"
     }
 
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/your-username/nodejs-cicd-app.git'
+                git credentialsId: 'github-token', url: 'https://github.com/manaswini-sinha/nodejs-app-deploy.git', branch: 'main'
             }
         }
 
@@ -46,7 +46,7 @@ pipeline {
             echo '✅ Deployment Successful!'
         }
         failure {
-            echo '❌ Something went wrong.'
+            echo '❌ Deployment Failed.'
         }
     }
 }
