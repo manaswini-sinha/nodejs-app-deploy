@@ -1,0 +1,12 @@
+{
+  "name": "nodejs-cicd-app",
+  "version": "1.0.0",
+  "description": "Node.js app deployed with Jenkins CI/CD",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo '✅ No tests yet!' && exit 0"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}
